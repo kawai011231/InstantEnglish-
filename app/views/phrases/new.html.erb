@@ -1,0 +1,19 @@
+<h1>新しいフレーズを追加</h1>
+
+<p><%= link_to 'フレーズ一覧に戻る', phrases_path, class: 'btn btn-secondary' %></p>
+
+<%= form_with model: @phrase, local: true do |form| %>
+  <div>
+    <%= form.label :english, "英語" %>
+    <%= form.text_field :english %>
+  </div>
+
+  <div>
+    <%= form.label :japanese, "日本語" %>
+    <%= form.text_field :japanese %>
+  </div>
+
+  <div>
+    <%= form.submit "追加" %>
+  </div>
+<% end %>

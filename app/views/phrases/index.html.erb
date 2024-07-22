@@ -1,0 +1,23 @@
+<h1>英会話フレーズ</h1>
+
+<p><%= link_to '新しいフレーズを追加', new_phrase_path, class: 'btn btn-primary' %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>英語</th>
+      <th>日本語</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @phrases.each do |phrase| %>
+      <tr>
+        <td><%= phrase.english %></td>
+        <td><%= phrase.japanese %></td>
+        <td>
+          <%= button_to '削除', phrase_path(phrase), method: :delete, data: { turbo_confirm: '本当に削除しますか？' }, form: { class: 'inline' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
